@@ -63,10 +63,11 @@
       padding: 0 16px;
     }
 
+    /* Rectangle 630 x 700 responsive (max width = 630) */
     .avatar-card {
       width: 100%;
       max-width: 630px;
-      aspect-ratio: 1 / 1; /* carré responsive */
+      height: 700px;
       background: #000;
       border-radius: 22px;
       border: 1px solid var(--border);
@@ -87,7 +88,7 @@
       width: 100%;
       height: 100%;
       border: none;
-      transform: scale(1.22); /* zoom pour masquer branding */
+      transform: scale(1.18);
       transform-origin: center;
     }
 
@@ -99,13 +100,24 @@
       color: var(--muted);
     }
 
-    @media (max-width: 480px) {
-      .logo-mark { font-size: 32px; }
-      .lab-sub { font-size: 10px; letter-spacing: 0.18em; }
-      .avatar-card { border-radius: 18px; }
-      .avatar-frame { border-radius: 18px; }
-      .avatar-frame iframe { transform: scale(1.18); }
+    @media (max-width: 650px) {
+      .avatar-card {
+        height: calc(700px * 0.75);
+      }
+      .avatar-frame iframe {
+        transform: scale(1.12);
+      }
     }
+
+    @media (max-width: 480px) {
+      .avatar-card {
+        height: calc(700px * 0.62);
+      }
+      .avatar-frame iframe {
+        transform: scale(1.08);
+      }
+    }
+
   </style>
 </head>
 
