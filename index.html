@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ogilvy AI Lab · Realtime Avatar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --ogilvy-red: #e4002b;
+      --bg: #050506;
+      --text: #f5f5f5;
+      --muted: #b9b9b9;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #2a1518 0%, transparent 50%),
+                  radial-gradient(circle at bottom right, #111827 0%, #050506 55%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      padding: 22px 0;
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(12px);
+    }
+
+    .logo-mark {
+      font-family: "Georgia", serif;
+      font-size: 40px;
+      color: var(--ogilvy-red);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .lab-sub {
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    main {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .avatar-card {
+      width: 630px;
+      height: 630px;
+      background: #000;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avatar-frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 630px;
+      height: 630px;
+      overflow: hidden;
+      border-radius: 22px;
+      background: #000;
+    }
+
+    .avatar-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      transform: scale(1.22);
+      transform-origin: center;
+    }
+
+    footer {
+      margin-top: 28px;
+      padding-bottom: 20px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo-mark">Ogilvy AI Lab</div>
+    <div class="lab-sub">Realtime Avatar Prototype</div>
+  </header>
+
+  <main>
+    <div class="avatar-card">
+      <div class="avatar-frame">
+        <iframe
+          src="https://app.simli.com/session/d039d260-b236-4701-bc22-668b8555b78e/gAAAAABpJrhLcBtCiS6-WlaAryjuIGwuz6p_7LO4nU5_QlRjQ4RlCBJO2Am91JUqxZQoz6Wh1AdqHI1oCLoxLLqNah5bSma78q-dz4-OhMlloIEvl7AR9JE74TrFhbm01uBBSMXGmkENxYKkDN7t9ZKE2oYIS4Sy3uCsoMAPY1facGF2pB6UhSwhOgYMkZV9MuFBra0l6ClBSaAv1nPZ_IroWgMVg9gTx85rrDMsJZlhYFfHn8e41JH4ufk54nkAPOcOeyn5KiDUKwgEoSKuvZPQFkbEjMuy113sCQVJL07fNYE6IhDVKpJsez0efnMcK23sAgWUT-xPVE40_GjgqvvCjqiGZHULuIVH4IUJgupPDQ3X-5jZnwxarORDLJxfmYpbEPTNEZHX1Glkifi4gQhdYl3UasamgN2DTFRb2bqyD6NqLFPY8e5spvJrGGXo1DDWVs2vUZ1WoHvxVn-pEncgTCy9TtuXvvmKs8C0Pw5sJY3roUMQJQ2dd65pAIqUs04qRm0y4SJHuXlnNIkm4TUaAFqzhgnP5y80_I6z_ztOemD78prfJbE5Jk5VErgB6WNLoLiP2HOMqiC0RFX243enYC9M_ho2Tg=="
+          allow="microphone; autoplay; camera"
+        ></iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Ogilvy Confidential · For internal experimentation only
+  </footer>
+
+</body>
+</html>
