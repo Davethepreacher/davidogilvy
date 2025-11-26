@@ -18,8 +18,9 @@
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #2a1518 0%, transparent 50%),
-                  radial-gradient(circle at bottom right, #111827 0%, #050506 55%);
+      background:
+        radial-gradient(circle at top left, #2a1518 0%, transparent 50%),
+        radial-gradient(circle at bottom right, #111827 0%, #050506 55%);
       color: var(--text);
       min-height: 100vh;
       display: flex;
@@ -54,32 +55,29 @@
     }
 
     main {
-      flex: 1;
-      width: 100%;
+      margin-top: 32px;
+      margin-bottom: 24px;
       display: flex;
       justify-content: center;
-      align-items: center;
-      padding: 24px 0;
+      width: 100%;
+      padding: 0 16px;
     }
 
     .avatar-card {
-      width: min(630px, 90vw);
-      height: min(630px, 90vw);
+      width: 100%;
+      max-width: 630px;
+      aspect-ratio: 1 / 1; /* carré responsive */
       background: #000;
       border-radius: 22px;
       border: 1px solid var(--border);
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
       position: relative;
       overflow: hidden;
-      margin: 0 auto;
     }
 
     .avatar-frame {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       overflow: hidden;
       border-radius: 22px;
       background: #000;
@@ -89,47 +87,24 @@
       width: 100%;
       height: 100%;
       border: none;
-      transform: scale(1.22);
+      transform: scale(1.22); /* zoom pour masquer branding */
       transform-origin: center;
     }
 
     footer {
-      margin-top: 8px;
-      padding: 12px 16px 20px;
+      margin-top: auto;
+      padding: 0 16px 20px;
       text-align: center;
       font-size: 11px;
       color: var(--muted);
     }
 
-    @media (max-width: 600px) {
-      header {
-        padding: 18px 12px;
-      }
-
-      .logo-mark {
-        font-size: 32px;
-      }
-
-      .lab-sub {
-        font-size: 10px;
-        letter-spacing: 0.18em;
-      }
-
-      main {
-        padding: 20px 0;
-      }
-
-      .avatar-card {
-        border-radius: 18px;
-      }
-
-      .avatar-frame {
-        border-radius: 18px;
-      }
-
-      .avatar-frame iframe {
-        transform: scale(1.18);
-      }
+    @media (max-width: 480px) {
+      .logo-mark { font-size: 32px; }
+      .lab-sub { font-size: 10px; letter-spacing: 0.18em; }
+      .avatar-card { border-radius: 18px; }
+      .avatar-frame { border-radius: 18px; }
+      .avatar-frame iframe { transform: scale(1.18); }
     }
   </style>
 </head>
@@ -144,7 +119,7 @@
     <div class="avatar-card">
       <div class="avatar-frame">
         <iframe
-          src="https://app.simli.com/session/d039d260-b236-4701-bc22-668b8555b78e/gAAAAABpJrhLcBtCiS6-WlaAryjuIGwuz6p_7LO4nU5_QlRjQ4RlCBJO2Am91JUqxZQoz6Wh1AdqHI1oCLoxLLqNah5bSma78q-dz4-OhMlloIEvl7AR9JE74TrFhbm01uBBSMXGmkENxYKkDN7t9ZKE2oYIS4Sy3uCsoMAPY1facGF2pB6UhSwhOgYMkZV9MuFBra0l6ClBSaAv1nPZ_IroWgMVg9gTx85rrDMsJZlhYFfHn8e41JH4ufk54nkAPOcOeyn5KiDUKwgEoSKuvZPQFkbEjMuy113sCQVJL07fNYE6IhDVKpJsez0efnMcK23sAgWUT-xPVE40_GjgqvvCjqiGZHULuIVH4IUJgupPDX-5jZnwxarORDLJxfmYpbEPTNEZHX1Glkifi4gQhdYl3UasamgN2DTFRb2bqyD6NqLFPY8e5spvJrGGXo1DDWVs2vUZ1WoHvxVn-pEncgTCy9TtuXvvmKs8C0Pw5sJY3roUMQJQ2dd65pAIqUs04qRm0y4SJHuXlnNIkm4TUaAFqzhgnP5y80_I6z_ztOemD78prfJbE5Jk5VErgB6WNLoLiP2HOMqiC0RFX243enYC9M_ho2Tg=="
+          src="https://app.simli.com/session/d039d260-b236-4701-bc22-668b8555b78e/gAAAAABpJrhLcBtCiS6-WlaAryjuIGwuz6p_7LO4nU5_QlRjQ4RlCBJO2Am91JUqxZQoz6Wh1AdqHI1oCLoxLLqNah5bSma78q-dz4-OhMlloIEvl7AR9JE74TrFhbm01uBBSMXGmkENxYKkDN7t9ZKE2oYIS4Sy3uCsoMAPY1facGF2pB6UhSwhOgYMkZV9MuFBra0l6ClBSaAv1nPZ_IroWgMVg9gTx85rrDMsJZlhYFfHn8e41JH4ufk54nkAPOcOeyn5KiDUKwgEoSKuvZPQFkbEjMuy113sCQVJL07fNYE6IhDVKpJsez0efnMcK23sAgWUT-xPVE40_GjgqvvCjqiGZHULuIVH4IUJgupPDQ3X-5jZnwxarORDLJxfmYpbEPTNEZHX1Glkifi4gQhdYl3UasamgN2DTFRb2bqyD6NqLFPY8e5spvJrGGXo1DDWVs2vUZ1WoHvxVn-pEncgTCy9TtuXvvmKs8C0Pw5sJY3roUMQJQ2dd65pAIqUs04qRm0y4SJHuXlnNIkm4TUaAFqzhgnP5y80_I6z_ztOemD78prfJbE5Jk5VErgB6WNLoLiP2HOMqiC0RFX243enYC9M_ho2Tg=="
           allow="microphone; autoplay; camera"
         ></iframe>
       </div>
